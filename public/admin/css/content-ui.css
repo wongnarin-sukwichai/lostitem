@@ -1,0 +1,470 @@
+/* =====================================================
+   CONTENT UI (Theme: MSU Clean - Yellow/Grey)
+   Revised: Minimal & Clean Style
+===================================================== */
+
+/* ===== Main spacing ===== */
+main {
+    padding: 25px; /* เพิ่ม Padding นิดหน่อยให้ดูโปร่ง */
+}
+
+/* ===== 1. Page Header (ปรับใหม่: พื้นขาว + เส้นข้างเหลือง) ===== */
+.page-header {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    
+    /* เส้นขอบบางๆ และเงาฟุ้งๆ */
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
+    
+    /* ดีไซน์เส้นเน้นด้านซ้าย (Signature) */
+    border-left: 5px solid #ffcc00;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header h5 {
+    margin: 0;
+    font-size: 20px; /* ใหญ่ขึ้นนิดนึง */
+    font-weight: 700;
+    color: #333333;
+    display: flex;
+    align-items: center;
+}
+
+/* ไอคอนหัวข้อ (ปรับให้กลมกลืน) */
+.page-header h5 i {
+    font-size: 20px;
+    margin-right: 12px;
+    color: #ffcc00; /* สีเหลือง */
+    background: rgba(255, 204, 0, 0.1); /* พื้นหลังเหลืองจางๆ */
+    padding: 8px;
+    border-radius: 8px; /* สี่เหลี่ยมมน */
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ===== 2. Search Card (ปรับให้ดูเบาลง) ===== */
+.search-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0; /* เส้นขอบสีเทาจาง */
+}
+
+.search-card label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b; /* สีเทากลางๆ ไม่ดำสนิท */
+    margin-bottom: 5px;
+}
+
+.search-card .form-control,
+.search-card .form-select {
+    padding: 9px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    color: #333;
+    transition: all 0.2s;
+}
+
+.search-card .form-control:focus,
+.search-card .form-select:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.15);
+}
+
+/* ===== 3. Table Card (หัวใจสำคัญของความคลีน) ===== */
+.table-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+/* ===== Table Styling (Clean Yellow) ===== */
+.table {
+    margin-bottom: 0;
+}
+
+/* หัวตาราง: ปรับจากสีเหลืองทึบ -> สีเหลืองอ่อนจางๆ (เหมือนหน้าบ้าน) */
+.table thead th {
+    background: #fffbef; /* พื้นหลังสีเหลืองอ่อน */
+    color: #444;         /* ตัวหนังสือสีเทาเข้ม */
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px;
+    border-bottom: 2px solid #ffcc00; /* เส้นขอบล่างสีเหลืองชัดเจน */
+    border-top: none;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 16px 15px; /* เพิ่ม Space ให้ไม่อึดอัด */
+    font-size: 14px;
+    color: #555;
+    border-bottom: 1px solid #f8f9fa; /* เส้นคั่นบางมากๆ */
+    vertical-align: middle;
+}
+
+/* Hover แถว */
+.table tbody tr:hover {
+    background: #fffae6; /* Hover แล้วเป็นสีเหลืองจางๆ */
+}
+
+/* ===== Badge (ป้ายสถานะ) ===== */
+.badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px; /* ทรงแคปซูล */
+}
+/* Badge สถานะแบบ Soft */
+.badge-pending {
+    background-color: #fff7ed; /* ส้มอ่อนมาก */
+    color: #c2410c;            /* ส้มเข้ม */
+    border: 1px solid #ffedd5;
+}
+.badge-returned {
+    background-color: #f0fdf4; /* เขียวอ่อนมาก */
+    color: #15803d;            /* เขียวเข้ม */
+    border: 1px solid #dcfce7;
+}
+
+/* ===== Action Buttons (ปุ่มจัดการ) ===== */
+.btn-group .btn {
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    margin: 0 2px;
+}
+
+/* ปรับปุ่ม Primary (เพิ่ม/ค้นหา) ให้ดู Modern */
+.btn-primary {
+    background-color: #333333;
+    border-color: #333333;
+    color: #ffcc00;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+.btn-primary:hover {
+    background-color: #000;
+    border-color: #000;
+    color: #ffcc00;
+    transform: translateY(-1px);
+}
+
+.btn-primary i {
+    color: #ffcc00 !important;
+}
+
+/* ปรับไอคอน Hamburger ให้เข้าธีม */
+#menuToggle i {
+    color: #333333 !important; 
+}
+
+/* ===== Pagination (ปุ่มเปลี่ยนหน้า) ===== */
+.pagination {
+    margin-top: 25px;
+    gap: 5px;
+}
+
+.page-link {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 50% !important; /* วงกลม */
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    background: #fff;
+    transition: all 0.2s;
+}
+
+.page-link:hover {
+    background: #f8fafc;
+    color: #333;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.page-item.active .page-link {
+    background: #ffcc00;
+    border-color: #ffcc00;
+    color: #333;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+/* ===== Empty State (ตอนไม่มีข้อมูล) ===== */
+.empty-state {
+    padding: 80px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.empty-state i {
+    font-size: 64px;
+    color: #e2e8f0;
+    margin-bottom: 20px;
+}
+
+.empty-state p {
+    margin: 0;
+    font-size: 16px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* =====================================================
+   ===== Form & Upload (Clean Style) =====
+   ===================================================== */
+
+/* 4. Form Card (ฟอร์มกรอกข้อมูล) */
+.form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* หัวข้อฟอร์ม: พื้นขาว + เส้นขอบล่าง */
+.form-card .card-header {
+    background: #ffffff;       /* พื้นขาว */
+    padding: 20px 25px;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    /* เส้นเน้นซ้ายสีเหลือง */
+    border-left: 5px solid #ffcc00;
+}
+
+.form-card .card-header i {
+    color: #f59e0b; /* ไอคอนสีส้มทอง */
+    font-size: 1.2em;
+}
+
+.form-card .card-body {
+    padding: 30px;
+}
+
+/* หัวข้อย่อยในฟอร์ม */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333333;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.section-header i {
+    color: #ffcc00;
+    font-size: 18px;
+}
+
+/* Input Fields */
+.form-label {
+    font-weight: 600;
+    color: #475569;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-card .form-control, 
+.form-card .form-select {
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.2s;
+}
+
+.form-card .form-control:focus, 
+.form-card .form-select:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.1);
+}
+
+/* Upload Zone */
+.upload-card {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-card:hover {
+    border-color: #ffcc00;
+    background: #fffbef;
+}
+
+.upload-card i {
+    font-size: 48px;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.upload-card:hover i {
+    color: #ffcc00;
+    transform: translateY(-5px);
+}
+
+/* Link Hover */
+.item-link-hover {
+    color: #333;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.item-link-hover:hover {
+    color: #d97706 !important; /* ส้มทอง */
+    text-decoration: none !important;
+}
+
+/* Thumb Image */
+.thumb-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 2px;
+    background: #fff;
+    transition: transform 0.2s;
+}
+.thumb-img:hover {
+    transform: scale(1.15);
+    border-color: #ffcc00;
+    z-index: 10;
+    position: relative;
+}
+
+strong {
+    font-weight: 700;
+}
+/* ===== Action Buttons (ปุ่มจัดการ ่ล่าสุด) ===== */ 
+
+/* ปรับระยะห่างของกลุ่มปุ่ม */
+.table .btn-group {
+    display: flex;       /* ใช้ Flexbox เพื่อจัดเรียง */
+    gap: 8px;            /* <--- ปรับระยะห่างตรงนี้ (ยิ่งเลขมาก ยิ่งห่าง) */
+    justify-content: center; /* จัดกึ่งกลาง */
+}
+
+.btn-group .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 8px !important; /* บังคับให้ปุ่มมนทุกปุ่ม (ไม่ให้ Bootstrap ตัดขอบ) */
+    margin: 0;           /* ลบ Margin เดิมออกเพราะใช้ gap แล้ว */
+}
+
+/* ปรับปุ่ม Primary (เพิ่ม/ค้นหา) ให้ดู Modern */
+.btn-primary {
+    background-color: #333333;
+    border-color: #333333;
+    color: #ffcc00;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+.btn-primary:hover {
+    background-color: #000;
+    border-color: #000;
+    color: #ffcc00;
+    transform: translateY(-1px);
+}
+
+.btn-primary i {
+    color: #ffcc00 !important;
+}
+
+/* ปุ่มแก้ไข/ลบ ในตารางให้มีเงาเล็กน้อย */
+.table .btn {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+}
+.table .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* ===== Mobile Fix สำหรับหน้าจัดการ (lost_items.php) ===== */
+@media (max-width: 767.98px) {
+    /* 1. บังคับตารางให้พอดีจอเป๊ะ */
+    .table-responsive { overflow-x: hidden !important; }
+    .table { 
+        width: 100% !important; 
+        table-layout: fixed; /* แบ่งเค้กตาม % */
+    }
+
+    /* 2. ยกเลิกความกว้างแบบ Pixel เดิม (Reset Width) */
+    .table th, .table td { width: auto !important; }
+
+    /* 3. ปรับขนาดรูปภาพ */
+    .img-thumb, .rounded.opacity-50 {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    /* 4. ปรับปุ่มจัดการให้เรียงแนวตั้ง (ประหยัดที่) */
+    .table .btn-group {
+        display: flex;
+        flex-direction: column; /* เรียงลง */
+        gap: 3px;
+    }
+    .table .btn-group .btn {
+        padding: 2px 0; /* ลดความสูงปุ่ม */
+        font-size: 10px;
+        width: 100%;
+    }
+
+    /* 5. ตัดคำชื่อทรัพย์สิน */
+    .item-name-cell {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        width: 100%;
+    }
+    
+    /* 6. ปรับ Font ให้เล็กอ่านง่าย */
+    .table th, .table td {
+        font-size: 12px;
+        padding: 8px 2px !important;
+    }
+}

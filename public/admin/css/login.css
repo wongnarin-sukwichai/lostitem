@@ -1,0 +1,217 @@
+/* assets/css/login.css - Theme: MSU Clean (Yellow/Grey) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'K2D', sans-serif;
+    /* พื้นหลังสีเทาอ่อนๆ คลีนๆ */
+    background: #f3f4f6; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ลวดลายพื้นหลังจางๆ ให้ดูมีมิติ */
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    /* จุด Polka dot สีเทาจางมากๆ */
+    background: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 0;
+}
+
+/* แถบสีเหลืองคาดเฉียงด้านหลังเพิ่มความเท่ (Optional) */
+body::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 204, 0, 0.1) 0%, rgba(255, 204, 0, 0.05) 100%);
+    transform: rotate(-10deg);
+    z-index: 0;
+    border-radius: 50px;
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px; 
+}
+
+/* Login Card */
+.login-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 35px;
+    /* เงานุ่มๆ */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); 
+    border: 1px solid rgba(0,0,0,0.02);
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header & Logo */
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-icon {
+    width: 70px;
+    height: 70px;
+    /* สีพื้นหลังไอคอน: เหลือง MSU */
+    background: #ffcc00; 
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.3); /* เงาสีเหลือง */
+}
+
+.brand-icon i {
+    font-size: 32px;
+    color: #333333; /* ไอคอนสีเทาเข้ม */
+}
+
+.login-header h1 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Form Styles */
+.form-group { margin-bottom: 20px; }
+
+.form-label {
+    color: #333333;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-group-custom { position: relative; }
+
+.input-group-custom i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8; /* สีไอคอนปกติ */
+    font-size: 16px;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.form-control {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 15px 12px 45px; 
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f9fafb; /* พื้นหลังช่องกรอกสีขาวอมเทานิดๆ */
+    color: #333;
+}
+
+.form-control:focus {
+    border-color: #ffcc00; /* เส้นขอบเหลืองเมื่อพิมพ์ */
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.15); /* เงาเหลืองจางๆ */
+    background: white;
+}
+
+/* เปลี่ยนสีไอคอนข้างหน้าเมื่อโฟกัส */
+.form-control:focus + i { color: #b49308; } 
+
+/* Button */
+.btn-login {
+    width: 100%;
+    /* ปุ่มสีเทาเข้ม ตัดตัวหนังสือเหลือง (ดูดุและทางการ) */
+    background: #333333;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    color: #ffcc00;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    background: #000000;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.alert {
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* Footer */
+.login-footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+}
+.login-footer i { color: #ffcc00; }
+
+/* Google OAuth Button */
+.btn-google {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3c4043;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    justify-content: center;
+}
+.btn-google:hover {
+    background: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+    color: #3c4043;
+}

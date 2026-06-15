@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem \"c:\\\\xampp\\\\htdocs\\\\lostitem\" -Depth 0)",
+      "Bash(Select-Object Name, LastWriteTime)",
+      "PowerShell(Get-ChildItem \"c:\\\\xampp\\\\htdocs\\\\lostitem\\\\app\" -Recurse | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"c:\\\\xampp\\\\htdocs\\\\lostitem\\\\\", \"\"\\) })",
+      "PowerShell(Get-ChildItem \"c:\\\\xampp\\\\htdocs\\\\lostitem\\\\resources\\\\views\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"c:\\\\xampp\\\\htdocs\\\\lostitem\\\\resources\\\\views\\\\\", \"\"\\) })",
+      "Bash(php artisan *)",
+      "PowerShell(Get-ChildItem \"c:\\\\xampp\\\\htdocs\\\\lostitem\\\\public\\\\build\\\\assets\" | Select-Object Name, @{N='Size\\(KB\\)';E={[math]::Round\\($_.Length/1KB,1\\)}})",
+      "Bash(del \"c:\\\\xampp\\\\htdocs\\\\lostitem\\\\.htaccess\")",
+      "Bash(Select-String -Path \"C:\\\\xampp\\\\apache\\\\conf\\\\httpd.conf\" -Pattern \"AllowOverride|htdocs|rewrite_module\")",
+      "Bash(Select-Object -First 30)",
+      "Bash(Get-ChildItem \"C:\\\\xampp\\\\htdocs\\\\\" -Directory | Select-Object Name | Sort-Object Name)",
+      "Read(//c/xampp/apache/conf/**)",
+      "Read(//c/xampp/htdocs/**)",
+      "Read(//c/xampp/apache/logs/**)"
+    ]
+  }
+}

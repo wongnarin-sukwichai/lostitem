@@ -1,0 +1,507 @@
+/* ===== index.php (Theme: MSU Clean - Yellow/Grey) ===== */
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@300;400;500;600;700&display=swap');
+
+body {
+    /* พื้นหลังคลีนๆ สีเทาอ่อนมาก เพื่อให้ Card สีขาวเด่นขึ้น */
+    background: #f8f9fa; 
+    font-family: 'K2D', sans-serif;
+    min-height: 100vh;
+    color: #333333; /* สีตัวอักษรหลัก */
+}
+
+/* =========================================
+   Sidebar Theme: MSU Clean (Yellow/Grey)
+   Original Style
+   ========================================= */
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    /* กลับมาใช้สีเทาเข้ม (Dark Grey) */
+    background: #333333; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+    z-index: 1050;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+}
+
+/* ส่วนหัว Sidebar (Brand) */
+.sidebar .brand {
+    padding: 25px 20px;
+    /* พื้นหลังเข้มขึ้นนิดหน่อยเพื่อให้แยกส่วน */
+    background: rgba(0,0,0,0.2); 
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar .brand i {
+    font-size: 24px;
+    color: #ffcc00; /* ไอคอนสีเหลืองเอกลักษณ์ */
+}
+
+/* หัวข้อหมวดหมู่ */
+.sidebar-header {
+    margin: 25px 20px 10px 20px; 
+    padding-left: 10px; 
+    color: #ffcc00; /* สีเหลือง */
+    font-weight: 700;   
+    font-size: 0.75rem; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+    border-left: 3px solid rgba(255, 204, 0, 0.3); /* เส้นขีดจางๆ หน้าหัวข้อ */
+    line-height: 1;
+}
+
+/* ลิงก์เมนู */
+.sidebar .nav-link {
+    color: #e2e2e2; /* สีเทาขาว */
+    padding: 12px 20px;
+    margin: 6px 15px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    border: 1px solid transparent;
+}
+
+.sidebar .nav-link i {
+    width: 30px;
+    font-size: 18px;
+    color: #a0a0a0; /* ไอคอนปกติสีเทา */
+    transition: color 0.3s;
+    text-align: center;
+}
+
+/* Hover State */
+.sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffcc00; /* ชี้แล้วตัวหนังสือเหลือง */
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link:hover i {
+    color: #ffcc00; /* ชี้แล้วไอคอนเหลือง */
+}
+
+/* Active State (เมนูที่เลือกอยู่) */
+.sidebar .nav-link.active {
+    background: #ffcc00; /* พื้นหลังสีเหลือง */
+    color: #333333;      /* ตัวหนังสือสีเทาเข้ม (ตัดกันชัดเจน) */
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3); /* เงาสีเหลืองฟุ้งๆ */
+}
+
+.sidebar .nav-link.active i {
+    color: #333333; /* ไอคอนสีเทาเข้ม */
+}
+.content-wrapper {
+    margin-left: 280px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1040;
+    backdrop-filter: blur(2px);
+}
+
+.overlay.active { display: block; }
+
+@media(max-width:992px){
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.active { transform: translateX(0); }
+    .content-wrapper { margin-left: 0; }
+}
+
+
+/* ===== Navbar (ขาวคลีน) ===== */
+.navbar {
+    background: rgba(255,255,255,0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* เงาบางมากๆ */
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar strong {
+    font-size: 20px;
+    color: #333333; /* หัวข้อ Navbar สีเทาเข้ม */
+    font-weight: 700;
+}
+
+.navbar .admin-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar .admin-name {
+    color: #333333;
+    font-weight: 600;
+}
+
+/* ===== Main Content ===== */
+main {
+    flex: 1;
+    padding: 25px;
+}
+
+/* ===== Cards (Clean Style) ===== */
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); /* Tailwind Style Shadow */
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0; /* ขอบบางๆ */
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* แถบสีเหลืองด้านบน Card */
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #ffcc00; 
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.stat-card i {
+    font-size: 32px;
+    color: #ffcc00; /* ไอคอนสีเหลือง */
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 204, 0, 0.1); /* พื้นหลังไอคอนสีเหลืองจางๆ */
+}
+
+.stat-card h5 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.stat-card small {
+    color: #6c757d; /* สีเทากลาง */
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ===== Common Card / Table Card ===== */
+.common-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0; /* เส้นขอบสีเทาจางมาก */
+    border-radius: 15px;       
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* เงาฟุ้งๆ นุ่มๆ */
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Card Header: ใช้สีเหลือง หรือ สีเทา */
+/* เลือกแบบที่ 1: สีเทาเข้ม ตัวหนังสือเหลือง (ดูดุ เท่) */
+/* เลือกแบบที่ 2: สีเหลือง ตัวหนังสือเทาเข้ม (ดูสดใส MSU) -> เลือกแบบนี้ */
+
+.card-header, .table-card .card-header, .common-card .card-header {
+    background: #ffcc00; /* พื้นหลังสีเหลือง */
+    color: #333333; /* ตัวหนังสือสีเทาเข้ม */
+    padding: 15px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.common-card .card-body {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+/* ===== Table ===== */
+.table {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.table thead {
+    background: #f8f9fa; /* หัวตารางสีเทาอ่อนมาก */
+}
+
+.table th {
+    color: #333333;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 15px;
+    border-bottom: 2px solid #ffcc00; /* เส้นใต้หัวตารางสีเหลือง */
+    background: transparent;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table-hover tbody tr:hover { 
+    background-color: #fffbef; /* Hover แล้วเป็นสีเหลืองจางมากๆ */ 
+}
+
+.thumb-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.thumb-img:hover {
+    transform: scale(1.1);
+    border-color: #ffcc00;
+}
+
+/* ===== Badge / Status ===== */
+.badge {
+    padding: 6px 12px;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 6px;
+}
+.bg-warning {
+    background-color: #ffcc00 !important;
+    color: #333 !important;
+}
+.bg-success {
+    background-color: #28a745 !important; /* เขียวปกติ */
+}
+.text-primary { color: #333333 !important; } /* เปลี่ยนลิงก์สีฟ้าเป็นเทาเข้ม */
+
+/* ===== Buttons ===== */
+.btn-primary {
+    background-color: #333333;
+    border-color: #333333;
+    color: #ffcc00;
+}
+.btn-primary:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffcc00;
+}
+
+.btn-light {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #333;
+}
+.btn-light:hover {
+    background: #e2e6ea;
+}
+
+.btn-outline-light {
+    border-color: rgba(0,0,0,0.2);
+    color: #333;
+}
+.btn-outline-light.active {
+    background-color: #ffcc00;
+    color: #333;
+    border-color: #ffcc00;
+}
+
+/* ===== Footer ===== */
+.footer-modern {
+    background: white;
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+    margin-top: auto;
+    text-align: center;
+}
+
+.footer-modern small {
+    color: #888;
+    font-size: 13px;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffcc00; /* Scrollbar สีเหลืองเมื่อเอาเมาส์ชี้ */
+}
+
+/* ===== Legend Dot ===== */
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+/* =========================================
+   Dashboard Theme: MSU Clean (Yellow/Grey)
+   ========================================= */
+
+/* ปรับพื้นหลัง Common Card */
+.common-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0; /* เส้นขอบสีเทาจางๆ */
+    border-radius: 15px;       /* มุมโค้งมน */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* เงาฟุ้งๆ นุ่มๆ */
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.common-card:hover {
+    transform: translateY(-2px); /* ลอยขึ้นนิดหน่อยเมื่อชี้ */
+    border-color: #ffcc00;       /* ขอบเปลี่ยนเป็นสีเหลือง */
+}
+
+/* ส่วนหัว Card (สีเหลือง ตัวหนังสือเทา) */
+.common-card .card-header {
+    background: #ffffff;       /* พื้นขาว (ไม่ใช่เหลืองทึบ) */
+    color: #333333;            
+    padding: 18px 25px;        /* เพิ่มพื้นที่หายใจ */
+    font-weight: 700;          
+    font-size: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    
+    /* ดีไซน์เส้นเน้นสีเหลืองด้านซ้าย */
+    border-left: 5px solid #ffcc00; 
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ปรับสีไอคอนใน Header */
+.common-card .card-header i {
+    color: #f59e0b; /* สีส้มทองให้ดูเด่นบนพื้นขาว */
+    font-size: 1.1em;
+}
+
+/* ส่วน Body */
+.common-card .card-body {
+    padding: 1.5rem;
+    flex: 1;
+}
+.common-card .table {
+    margin-bottom: 0;
+}
+
+/* ===== ปรับแต่งตารางใน Dashboard ===== */
+.common-card .table thead {
+    background-color: #fffbef; /* สีเหลืองอ่อนมากๆ พื้นหลังหัวตาราง */
+}
+
+.common-card .table th {
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #ffcc00; /* เส้นใต้หัวตารางสีเหลืองเข้ม */
+    font-size: 14px;
+}
+
+.common-card .table td {
+    border-bottom: 1px solid #f1f1f1;
+    color: #555;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Hover แถวตาราง */
+.table-hover tbody tr:hover {
+    background-color: #fffae6; /* สีเหลืองจางๆ เมื่อเอาเมาส์ชี้ */
+}
+
+/* ===== ปุ่มสลับกราฟ (วัน/เดือน/ปี) ===== */
+/* ปรับปุ่มให้เข้ากับพื้นหลังสีเหลืองของ Header */
+.common-card .btn-group .btn-outline-light {
+    border-color: #333333;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.common-card .btn-group .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+.common-card .btn-group .btn-outline-light.active {
+    background-color: #333333; /* ปุ่มที่เลือกเป็นสีเทาเข้ม */
+    color: #ffcc00;            /* ตัวหนังสือสีเหลือง */
+    border-color: #333333;
+}
+
+/* ปุ่ม "ดูทั้งหมด" ใน Card ล่าสุด */
+.common-card .btn-light.text-primary {
+    background: #ffffff;
+    color: #333333 !important;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.common-card .btn-light.text-primary:hover {
+    background: #333333;
+    color: #ffcc00 !important;
+}
+
+/* ===== Stat Card (กล่องตัวเลข 4 กล่องบน) ===== */
+.stat-card {
+    border: 1px solid #eee;
+    background: #fff;
+    border-radius: 15px;
+}
+.stat-card:hover {
+    border-color: #ffcc00;
+}
+.stat-card h5 {
+    color: #333;
+}
+/* แก้ปัญหา Flatpickr จมใต้ Modal */
+.flatpickr-calendar {
+    z-index: 99999 !important; 
+}
