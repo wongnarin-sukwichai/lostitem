@@ -5,19 +5,28 @@
 <title>ระบบสืบค้นของหาย | Lost & Found MSU</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-<nav class="navbar sticky-top">
-    <div class="container-fluid px-4 d-flex align-items-center">
-        <a class="navbar-brand" href="{{ route('home') }}">
-            <i class="fas fa-box-open me-2"></i>Lost & Found <span style="font-weight:300;font-size:.9em;">MSU</span>
-        </a>
-        <a href="{{ route('login') }}" class="btn-signin ms-auto">
-            <i class="fas fa-user-shield me-1"></i> เจ้าหน้าที่
-        </a>
-    </div>
-</nav>
+    <nav class="navbar sticky-top">
+        <div class="container-fluid px-4 d-flex align-items-center">
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <i class="fas fa-box-open me-2"></i>Lost & Found <span style="font-weight:300;font-size:.9em;">MSU</span>
+            </a>
+            
+            @if(Auth::check())
+                <a href="{{ route('admin.dashboard') }}" class="btn-signin ms-auto">
+                    <i class="fas fa-tachometer-alt me-1"></i> เข้าสู่หน้าแอดมิน
+                </a>
+            @else
+                <a href="{{ route('login') }}" class="btn-signin ms-auto">
+                    <i class="fas fa-user-shield me-1"></i> เจ้าหน้าที่
+                </a>
+            @endif
+            
+        </div>
+    </nav>
 
 <section class="hero-section">
     <div class="container px-3">

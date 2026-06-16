@@ -7,6 +7,8 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @vite(['resources/css/admin.css', 'resources/js/admin.js'])
 @stack('styles')
+<link rel="stylesheet" href="{{ asset('admin/css/main.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 

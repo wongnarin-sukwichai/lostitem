@@ -20,16 +20,24 @@
 
 <div class="row g-3 mb-4">
     @foreach([
-        ['ทรัพย์สินทั้งหมด', $totalItems,    'boxes',        'primary'],
-        ['รอรับคืน',         $pendingItems,  'clock',        'warning'],
-        ['คืนแล้ว',          $returnedItems, 'check-circle', 'success'],
-        ['เพิ่มวันนี้',       $todayItems,    'calendar-day', 'info'],
-    ] as [$label, $value, $icon, $color])
+        ['ทรัพย์สินทั้งหมด', $totalItems,    'boxes',        'primary', '#f59e0b'], // ใช้สีเหลืองทองตามภาพพี่ครับ
+        ['รอรับคืน',         $pendingItems,  'clock',        'warning', '#f59e0b'],
+        ['คืนแล้ว',          $returnedItems, 'check-circle', 'success', '#f59e0b'],
+        ['เพิ่มวันนี้',       $todayItems,    'calendar-day', 'info',    '#f59e0b'],
+    ] as [$label, $value, $icon, $color, $hexColor])
     <div class="col-xl-3 col-md-6">
-        <div class="stat-card text-center">
-            <i class="fas fa-{{ $icon }}"></i>
-            <h5>{{ number_format($value) }}</h5>
-            <small>{{ $label }}</small>
+        <div class="stat-card d-flex flex-column align-items-center justify-content-center" 
+             style="background: #fff; border-radius: 15px; border: 1px solid #f0f0f0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); padding: 24px !important; text-align: center !important; height: 100%;">
+            
+            <div class="d-flex align-items-center justify-content-center mb-3" 
+                 style="width: 56px !important; height: 56px !important; background-color: {{ $hexColor }}15 !important; color: {{ $hexColor }} !important; border-radius: 12px !important; margin: 0 auto !important;">
+                <i class="fas fa-{{ $icon }} fa-lg" style="margin: 0 !important; padding: 0 !important; display: inline-block !important; text-align: center !important;"></i>
+            </div>
+            
+            <h3 class="fw-bold mb-1 text-dark" style="letter-spacing: -0.5px; margin: 0 !important; text-align: center !important;">{{ number_format($value) }}</h3>
+            
+            <small class="text-secondary fw-medium" style="font-size: 13px; display: block !important; text-align: center !important; margin-top: 4px !important;">{{ $label }}</small>
+            
         </div>
     </div>
     @endforeach
